@@ -9,6 +9,7 @@ describe("Test Contact Us via WebdriverUni", () => {
           cy.get('[name="last_name"]').type('Smith')
           cy.get('[name="email"]').type('JohnSmith@o2.pl')
           cy.get('textarea.feedback-input').type('We need more practice with cypress')
+          cy.get('[type="submit"]').click()
     });
     
     it("Should not be able to submit a successful submission via contact us form as all fields are required", () => {
