@@ -8,7 +8,5 @@ describe("Test Contact Us via Automation test store", () => {
         cy.get('#ContactUsFrm_email').type("joe_blogs123@gmail.com");
         cy.get('#ContactUsFrm_enquiry').type("Do you provide additional discount on bulk orders?");
         cy.get('.col-md-6 > .btn').click();
-    });
-    
-
+    }); 
 })
