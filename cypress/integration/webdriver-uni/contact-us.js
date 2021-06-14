@@ -10,14 +10,16 @@ describe("Test Contact Us via WebdriverUni", () => {
           cy.get('[name="email"]').type('JohnSmith@o2.pl');
           cy.get('textarea.feedback-input').type('We need more practice with cypress');
           cy.get('[type="submit"]').click();
+          cy.get('h1').should('have.text', 'Thank You for your Message!')
     });
     
     it("Should not be able to submit a successful submission via contact us form as all fields are required", () => {
         cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html');
         cy.get('[name="first_name"]').type('Tom');
         cy.get('[name="last_name"]').type('Smith');
-   //     cy.get('[name="email"]').type('JohnSmith@o2.pl');
+   //   cy.get('[name="email"]').type('JohnSmith@o2.pl');
         cy.get('textarea.feedback-input').type('We need more practice with cypress');
         cy.get('[type="submit"]').click();
+        cy.get('body').contains('Error: all fields are required Error: Invalid email address')
     });
 })
