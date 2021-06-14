@@ -23,3 +23,5 @@ Cypress.Server.defaults({
         return true;
     }
 })
+
+require('cypress-xpath')
