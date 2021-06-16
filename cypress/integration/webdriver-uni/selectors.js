@@ -7,7 +7,7 @@ describe("Selector examples", () => {
         cy.get("input");
 
         //By attribute name and value
-        cy.get("input[name='first']");
+        cy.get("input[name='first_name']");
 
         //By id
         cy.get("#contact_me");
@@ -19,7 +19,7 @@ describe("Selector examples", () => {
         cy.get("[class='navbar navbar-inverse navbar-fixed-top']")
 
         //By two different attributes
-        cy.get("[name='email'][placeholder='Email Adress']")
+        cy.get("[name='email'][placeholder='Email Address']")
 
         //By xpath
         cy.xpath("//input[@name='first_name']")
