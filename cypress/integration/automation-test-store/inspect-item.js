@@ -1,16 +1,21 @@
 /// <reference types="Cypress" />
 
-describe("Test Contact Us via Automation test store", () => {
-    it("Should be able to submit a successful submission via contact us form", () => {
+describe("Inspect Automation Test Store items using chain of commands", () => {
+    it("Click on the first item using item header", () => {
         cy.visit("https://www.automationteststore.com/");
-        //cy.get('.info_links_footer > :nth-child(5) > a').click();
-        cy.get("a[href$='contact']").click();
-        //cy.xpath("//a[contains(@href, 'contact')]").click();
-        cy.get('#ContactUsFrm_first_name').type("Jon");
-        cy.get('#ContactUsFrm_email').type("joe_blogs123@gmail.com");
-        cy.get('#ContactUsFrm_email').should('have.attr', 'name', 'email');
-        cy.get('#ContactUsFrm_enquiry').type("Do you provide additional discount on bulk orders?");
-        cy.get("button[title='Submit']").click();
-        cy.get('.mb40 > :nth-child(3)').should('have.text','Your enquiry has been successfully sent to the store owner!');
+        cy.get('#block_frame_featured_1769 > .thumbnails > :nth-child(1) > .fixed_wrapper > .fixed > .prdocutname').click();
+    
+    }); 
+
+    it("Click on the first item using item text", () => {
+        cy.visit("https://www.automationteststore.com/");
+        cy.get('.prdocutname').contains('Skinsheen Bronzer Stick').click();
+    
+    }); 
+
+    it("Click on the first item using index", () => {
+        cy.visit("https://www.automationteststore.com/");
+        cy.get('.fixed_wrapper').find('.prdocutname').eq(0).click();
+    
     }); 
 })
