@@ -9,11 +9,11 @@
   "author": "Marcin Kufel",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^4.12.1",
+    "cypress": "^4.5.0",
     "cypress-cucumber-preprocessor": "^4.1.2",
     "cypress-xpath": "^1.6.2"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions":true
+    "nonGlobalStepDefinitions": true
   }
 }
