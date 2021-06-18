@@ -1,4 +1,4 @@
-/// <reference types="Cypress" />
+/// <reference types="cypress" />
 
 describe("Test Contact Us via Automation test store", () => {
     it("Should be able to submit a successful submission via contact us form", () => {
