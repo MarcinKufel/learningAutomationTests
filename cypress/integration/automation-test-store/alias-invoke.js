@@ -11,7 +11,7 @@ describe("Alias and invoke", () => {
     });
 
 
-    it.only("Validate product thumbnail", () => {
+    it("Validate product thumbnail", () => {
         cy.visit("https://www.automationteststore.com/");
         cy.get('.thumbnail').as('productThumbnail');
         cy.get('@productThumbnail').should('have.length', 16);
@@ -22,9 +22,17 @@ describe("Alias and invoke", () => {
     it.only("Calculate total of normal and sale products", () => {
         cy.visit("https://www.automationteststore.com/");
         cy.get('.thumbnail').as('productThumbnail');
-        cy.get('@productThumbnail').find('.oneprice').each(($el, index, $list) => {
-
-            
-        });
+        // cy.get('@productThumbnail').find('.oneprice').each(($el, index, $list) => {
+        //     cy.log($el.text());
+        //   });
+            cy.get('.thumbnail').find('.oneprice').invoke('text').as('itemPrice')
+            cy.get('@itemPrice').then($linkText => {
+                let itemPrice = $linkText.split('$');
+                let i;
+                for(i = 0; i < itemPrice.length; i++){
+                  cy.log(itemPrice[i])
+                }
+            })
+        
     });
 })
