@@ -1,3 +1,8 @@
 {
-    "testFiles": "**/*.*"
+    "testFiles": "**/*.*",
+    "chromeWebSecurity": false
+   
 }
+
+
+
