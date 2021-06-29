@@ -23,7 +23,6 @@ describe("Validate webdriveruni homepage links", () => {
         cy.url().should('include', 'To-Do-List')
         cy.go('back');
 
-
     });
     
 
