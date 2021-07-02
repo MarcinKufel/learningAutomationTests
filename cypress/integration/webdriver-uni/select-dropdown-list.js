@@ -1,12 +1,16 @@
 /// <reference types="cypress" />
 
-describe("Verify radio buttons via webdriveruni", () => {
-    it("Check specific radio buttons", () => {
+describe("Interact with dropdown lists via webddriveruni", () => {
+    it("Select specific values via select dropdown lists", () => {
         cy.visit('http://www.webdriveruniversity.com/')
         cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true});
 
-        cy.get('#radio-buttons').find("input[type='radio']").first().check()
-        cy.get('#radio-buttons').find("input[type='radio']").eq(1).check()
+        cy.get('#dropdowm-menu-1').select('c#')
+        cy.get('#dropdowm-menu-2').select('testng').should('have.value', 'testng')
+        cy.get('#dropdowm-menu-3').select('JQuery').contains('JQuery')
+
+        cy.get('#dropdowm-menu-2').select('maven').should('have.value', 'maven')
+        cy.get('#dropdowm-menu-2').select('TestNG').contains('TestNG')
 
 
     });
