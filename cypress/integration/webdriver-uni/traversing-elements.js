@@ -21,6 +21,7 @@ describe("Traversing DOM elements in Cypress", () => {
   });
 
   it("find() to retrieve DOM elements of a given selector", () => {
+    cy.get('.traversal-pagination').find('li').find('a').should('have.length', 7)
   });
 
   it("first() to retrieve the first DOM element within elements ", () => {
