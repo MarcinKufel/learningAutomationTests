@@ -1,33 +1,17 @@
 /// <reference types="cypress" />
 
-describe("Verify radio buttons via webdriveruni", () => {
-    it("Check specific radio buttons", () => {
+describe("Test mouse actions", () => {
+    it("Scroll element into view", () => {
         cy.visit('http://www.webdriveruniversity.com/')
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true});
-
-        cy.get('#radio-buttons').find("input[type='radio']").first().check()
-        cy.get('#radio-buttons').find("input[type='radio']").eq(1).check()
-
-
+        cy.get('#actions').scrollIntoView().invoke('removeAttr', 'target').click({force:true});
     });
 
-    it("Validate the states of specific radio buttons", () => {
+    it("I should be able to drag and drop a draggable item", () => {
         cy.visit('http://www.webdriveruniversity.com/')
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true});
+        cy.get('#actions').scrollIntoView().invoke('removeAttr', 'target').click({force:true});
 
-        cy.get("[value='lettuce']").should('not.be.checked');
-        cy.get("[value='pumpkin']").should('be.checked');
-
-        cy.get("[value='lettuce']").check();
-        cy.get("[value='lettuce']").should('be.checked');
-        cy.get("[value='pumpkin']").should('not.be.checked');
-
-        cy.get("[value='cabbage']").should('be.disabled');
-
-
-     
-
-
+        cy.get('#draggable').trigger('mousedown', {which: 1})
+        cy.get('#droppable').trigger('mousemove').trigger('mouseup', {force:true})
     });
 
 })
