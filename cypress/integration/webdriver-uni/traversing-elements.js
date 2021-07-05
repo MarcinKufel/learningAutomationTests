@@ -24,7 +24,8 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.get('.traversal-pagination').find('li').find('a').should('have.length', 7)
   });
 
-  it("first() to retrieve the first DOM element within elements ", () => {
+  it.only("first() to retrieve the first DOM element within elements ", () => {
+    cy.get('.traversal-table > tbody >tr > td').first().should('contain', 'Andy');
   });
 
   it("last() to retrieve the last DOM element within elements", () => {
