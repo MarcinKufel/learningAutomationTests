@@ -1,4 +1,5 @@
 {
+    "baseUrl" : "http://www.webdriveruniversity.com",
     "testFiles": "**/*.*",
     "chromeWebSecurity": false,
     "defaultCommandTimeout": 10000,
