@@ -7,9 +7,12 @@ describe("Test Contact Us via WebdriverUni", () => {
       globalThis.data = data;
     })
   })
+
+  beforeEach(() => {
+    cy.visit(Cypress.env("webdriveruni_homepage") + "/Contact-Us/contactus.html")
+  })
     it("Should be able to submit a successful submission via contact us form", () => {
-        cy.visit('http://www.webdriveruniversity.com/')
-        cy.get('#contact-us').invoke('removeAttr', 'target').click({force:true});
+
 //        cy.get('#contact-us').click({force: true})
        //   cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html');
           cy.document().should('have.property', 'charset').and('eq', 'UTF-8');
@@ -28,8 +31,6 @@ describe("Test Contact Us via WebdriverUni", () => {
     
     it("Should not be able to submit a successful submission via contact us form as all fields are required", () => {
       //  cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html');
-        cy.visit('http://www.webdriveruniversity.com/')
-        cy.get('#contact-us').invoke('removeAttr', 'target').click({force:true});
         // cy.get('[name="first_name"]').type(data.first_name);
         // cy.get('[name="last_name"]').type(data.last_name);
         // cy.get('textarea.feedback-input').type('We need more practice with cypress');
