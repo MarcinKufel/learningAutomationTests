@@ -5,6 +5,10 @@ import Contact_Us_PO from '../../support/pageObjects/webdriver-uni/Contact_Us_PO
 /// <reference types="cypress" />
 
 describe("Test Contact Us via WebdriverUni", () => {
+  const homepage_PO = new Homepage_PO();
+  const contact_Us_PO = new Contact_Us_PO();
+
+
   before(function(){
     cy.fixture('example').then(function(data){
      // this.data = data;
@@ -14,7 +18,7 @@ describe("Test Contact Us via WebdriverUni", () => {
 
   beforeEach(() => {
  //   cy.visit(Cypress.env("webdriveruni_homepage") + "/Contact-Us/contactus.html")
- const homepage_PO = new Homepage_PO();
+ //const homepage_PO = new Homepage_PO();
  homepage_PO.visitHomePage();
  homepage_PO.clickOn_ContactUS_Button();
   })
@@ -35,7 +39,7 @@ describe("Test Contact Us via WebdriverUni", () => {
           // cy.get('h1').should('have.text', 'Thank You for your Message!')
          // cy.webdriverUni_ContactForm_Submission(data.first_name, data.last_name, data.email, 'We need more practice with cypress', 'h1', 'Thank You for your Message!')
          //   cy.webdriverUni_ContactForm_Submission(Cypress.env("first_name"), data.last_name, data.email, 'We need more practice with cypress', 'h1', 'Thank You for your Message!')
-        const contact_Us_PO = new Contact_Us_PO();
+        // const contact_Us_PO = new Contact_Us_PO();
         contact_Us_PO.contactForm_Submission(Cypress.env("first_name"), data.last_name, data.email, 'We need more practice with cypress', 'h1', 'Thank You for your Message!');
     });
     
@@ -46,7 +50,9 @@ describe("Test Contact Us via WebdriverUni", () => {
         // cy.get('textarea.feedback-input').type('We need more practice with cypress');
         // cy.get('[type="submit"]').click();
         // cy.get('body').contains('Error: Invalid email address')
-        cy.webdriverUni_ContactForm_Submission(data.first_name, data.last_name, " ", 'We need more practice with cypress', 'body', 'Error: Invalid email address')
+        // const contact_Us_PO = new Contact_Us_PO();
+        contact_Us_PO.contactForm_Submission(data.first_name, data.last_name, " ", 'We need more practice with cypress', 'body', 'Error: Invalid email address')
+     //   cy.webdriverUni_ContactForm_Submission(data.first_name, data.last_name, " ", 'We need more practice with cypress', 'body', 'Error: Invalid email address')
 
     });
 })
