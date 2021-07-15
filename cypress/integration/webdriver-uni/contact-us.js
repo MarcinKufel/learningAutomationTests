@@ -5,6 +5,7 @@ import Contact_Us_PO from '../../support/pageObjects/webdriver-uni/Contact_Us_PO
 /// <reference types="cypress" />
 
 describe("Test Contact Us via WebdriverUni", () => {
+  Cypress.config('defaultCommandTimeout', 20000)
   const homepage_PO = new Homepage_PO();
   const contact_Us_PO = new Contact_Us_PO();
 
