@@ -5,6 +5,7 @@
     "defaultCommandTimeout": 10000,
     "pageLoadTimeout": 30000,
     "ignoreTestFiles": "**/other/*",
+    "videosFolder": "cypress/videos/testExecutionVideos",
 
     "env": {
         "webdriveruni_homepage": "http://www.webdriveruniversity.com",
