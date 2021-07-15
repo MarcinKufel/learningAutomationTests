@@ -20,8 +20,10 @@ describe("Test Contact Us via WebdriverUni", () => {
   beforeEach(() => {
  //   cy.visit(Cypress.env("webdriveruni_homepage") + "/Contact-Us/contactus.html")
  //const homepage_PO = new Homepage_PO();
+ cy.wait(3000)
  homepage_PO.visitHomePage();
  homepage_PO.clickOn_ContactUS_Button();
+ //cy.pause();
   })
 
 
