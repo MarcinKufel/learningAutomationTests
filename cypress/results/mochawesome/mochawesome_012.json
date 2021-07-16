@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-07-16T06:35:24.431Z",
+    "end": "2021-07-16T06:35:26.153Z",
+    "duration": 1722,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "70d0c6c2-8cd9-4696-9ff4-0b63d7efb18a",
+      "title": "",
+      "fullFile": "cypress\\integration\\webdriver-uni\\file-upload.js",
+      "file": "cypress\\integration\\webdriver-uni\\file-upload.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e9216f25-89c8-4048-9bce-f1323ca1dc66",
+          "title": "Test File Upload via webdriveruni",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Upload a file...",
+              "fullTitle": "Test File Upload via webdriveruni Upload a file...",
+              "timedOut": null,
+              "duration": 1180,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://www.webdriveruniversity.com/');\ncy.get('#file-upload').invoke('removeAttr', 'target').click({\n  force: true\n});\ncy.fixture(\"laptop.png\", \"base64\").then(function (fileContent) {\n  cy.get(\"#myFile\").attachFile({\n    fileContent: fileContent,\n    fileName: \"laptop.png\",\n    mimeType: \"image/png\"\n  }, {\n    uploadType: \"input\"\n  });\n});\ncy.get('#submit-button').click();",
+              "err": {},
+              "uuid": "a74fb4c3-d370-4c56-af5c-f571ecb3ccf0",
+              "parentUUID": "e9216f25-89c8-4048-9bce-f1323ca1dc66",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Upload no file...",
+              "fullTitle": "Test File Upload via webdriveruni Upload no file...",
+              "timedOut": null,
+              "duration": 521,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://www.webdriveruniversity.com/');\ncy.get('#file-upload').invoke('removeAttr', 'target').click({\n  force: true\n});\ncy.get('#submit-button').click();",
+              "err": {},
+              "uuid": "0055ff4c-8fa2-4e2c-96bb-d0919bbeaa2c",
+              "parentUUID": "e9216f25-89c8-4048-9bce-f1323ca1dc66",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a74fb4c3-d370-4c56-af5c-f571ecb3ccf0",
+            "0055ff4c-8fa2-4e2c-96bb-d0919bbeaa2c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1701,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
