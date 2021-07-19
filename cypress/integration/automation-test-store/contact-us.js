@@ -6,9 +6,10 @@ describe("Test Contact Us via Automation test store", () => {
         cy.fixture("userDetails").as("user")
     })
     it("Should be able to submit a successful submission via contact us form", () => {
+       // Cypress.currentTest.retries(4)
         cy.visit("https://www.automationteststore.com/");
         //cy.get('.info_links_footer > :nth-child(5) > a').click();
-        cy.get("a[href$='contact1']").click().then((contactUsText) => {
+        cy.get("a[href$='contact']").click().then((contactUsText) => {
         cy.log("Clicked on link using "+ contactUsText.text())
         });
         //cy.xpath("//a[contains(@href, 'contact')]").click();
