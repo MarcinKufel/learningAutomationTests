@@ -5,7 +5,12 @@ describe("Test Contact Us via Automation test store", () => {
     //    cy.viewport(550, 750)
         cy.fixture("userDetails").as("user")
     })
-    it("Should be able to submit a successful submission via contact us form", () => {
+    it("Should be able to submit a successful submission via contact us form", {
+        retries: {
+            runMode: 2,
+            openMode: 2
+        }
+    }, () => {
   
         cy.visit("https://www.automationteststore.com/");
         //cy.get('.info_links_footer > :nth-child(5) > a').click();
